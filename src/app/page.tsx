@@ -83,10 +83,16 @@ const contactLinks = [
 
 export default function Home() {
     return (
-        <div className="min-h-screen">
+        <main id="main-content" className="min-h-screen">
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-linear-to-br from-primary/10 via-background to-primary/5 px-4 py-16 md:px-8 md:py-24 lg:py-32">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+            <section
+                aria-labelledby="hero-heading"
+                className="relative overflow-hidden bg-linear-to-br from-primary/10 via-background to-primary/5 px-4 py-16 md:px-8 md:py-24 lg:py-32"
+            >
+                <div
+                    className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"
+                    aria-hidden="true"
+                />
                 <div className="relative mx-auto max-w-6xl">
                     <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12 lg:gap-16">
                         <div className="shrink-0">
@@ -105,7 +111,10 @@ export default function Home() {
                             <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium">
                                 Social Media Marketing Specialist
                             </Badge>
-                            <h1 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
+                            <h1
+                                id="hero-heading"
+                                className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl"
+                            >
                                 MD. Rounak Parvez
                             </h1>
                             <p className="mb-8 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">
@@ -115,7 +124,7 @@ export default function Home() {
                             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
                                 <Button size="lg" className="gap-2" asChild>
                                     <Link href="#contact">
-                                        Get in Touch <ArrowRight className="h-4 w-4" />
+                                        Get in Touch <ArrowRight className="h-4 w-4" aria-hidden="true" />
                                     </Link>
                                 </Button>
                                 <Button size="lg" variant="outline" asChild>
@@ -128,11 +137,16 @@ export default function Home() {
             </section>
 
             {/* About Section */}
-            <section className="px-4 py-12 md:px-8 md:py-16 lg:py-20">
+            <section aria-labelledby="about-heading" className="px-4 py-12 md:px-8 md:py-16 lg:py-20">
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-8 text-center md:mb-12">
-                        <h2 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">About Me</h2>
-                        <div className="mx-auto h-1 w-16 rounded-full bg-primary" />
+                        <h2
+                            id="about-heading"
+                            className="mb-3 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+                        >
+                            About Me
+                        </h2>
+                        <div className="mx-auto h-1 w-16 rounded-full bg-primary" aria-hidden="true" />
                     </div>
                     <div className="mx-auto max-w-4xl space-y-5">
                         <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -178,11 +192,20 @@ export default function Home() {
             <Separator className="mx-auto max-w-6xl" />
 
             {/* Services Section */}
-            <section id="services" className="scroll-mt-16 px-4 py-12 md:px-8 md:py-16 lg:py-20">
+            <section
+                id="services"
+                aria-labelledby="services-heading"
+                className="scroll-mt-16 px-4 py-12 md:px-8 md:py-16 lg:py-20"
+            >
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-8 text-center md:mb-12">
-                        <h2 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">Services</h2>
-                        <div className="mx-auto h-1 w-16 rounded-full bg-primary" />
+                        <h2
+                            id="services-heading"
+                            className="mb-3 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+                        >
+                            Services
+                        </h2>
+                        <div className="mx-auto h-1 w-16 rounded-full bg-primary" aria-hidden="true" />
                         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
                             Comprehensive digital marketing solutions to take your business to the next level
                         </p>
@@ -195,9 +218,11 @@ export default function Home() {
                             >
                                 <CardHeader className="pb-3">
                                     <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                                        <service.icon className="h-6 w-6 text-primary" />
+                                        <service.icon className="h-6 w-6 text-primary" aria-hidden="true" />
                                     </div>
-                                    <CardTitle className="text-base sm:text-lg">{service.title}</CardTitle>
+                                    <CardTitle as="h3" className="text-base sm:text-lg">
+                                        {service.title}
+                                    </CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <CardDescription className="text-sm sm:text-base">
@@ -211,9 +236,12 @@ export default function Home() {
             </section>
 
             {/* CTA Section */}
-            <section className="bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 px-4 py-12 md:px-8 md:py-16 lg:py-20">
+            <section
+                aria-labelledby="cta-heading"
+                className="bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 px-4 py-12 md:px-8 md:py-16 lg:py-20"
+            >
                 <div className="mx-auto max-w-4xl text-center">
-                    <h2 className="mb-4 text-xl font-bold text-foreground sm:text-2xl md:text-3xl">
+                    <h2 id="cta-heading" className="mb-4 text-xl font-bold text-foreground sm:text-2xl md:text-3xl">
                         Ready to Scale Your Business Digitally?
                     </h2>
                     <p className="mb-6 text-base text-muted-foreground sm:text-lg">
@@ -225,20 +253,27 @@ export default function Home() {
                     </p>
                     <Button size="lg" className="gap-2" asChild>
                         <Link href="#contact">
-                            Start Your Journey <ArrowRight className="h-4 w-4" />
+                            Start Your Journey <ArrowRight className="h-4 w-4" aria-hidden="true" />
                         </Link>
                     </Button>
                 </div>
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="scroll-mt-16 px-4 py-12 md:px-8 md:py-16 lg:py-20">
+            <section
+                id="contact"
+                aria-labelledby="contact-heading"
+                className="scroll-mt-16 px-4 py-12 md:px-8 md:py-16 lg:py-20"
+            >
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-8 text-center md:mb-12">
-                        <h2 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
+                        <h2
+                            id="contact-heading"
+                            className="mb-3 text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+                        >
                             Get in Touch
                         </h2>
-                        <div className="mx-auto h-1 w-16 rounded-full bg-primary" />
+                        <div className="mx-auto h-1 w-16 rounded-full bg-primary" aria-hidden="true" />
                         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
                             Whether you&apos;re looking to scale your business or build a career in Social Media
                             Marketing — I&apos;m here to guide you every step of the way.
@@ -252,7 +287,7 @@ export default function Home() {
                             >
                                 <CardContent className="flex items-center gap-4 p-4 sm:p-6">
                                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                                        <contact.icon className="h-6 w-6 text-primary" />
+                                        <contact.icon className="h-6 w-6 text-primary" aria-hidden="true" />
                                     </div>
                                     <div className="min-w-0">
                                         <p className="text-sm font-medium text-muted-foreground">{contact.label}</p>
@@ -265,6 +300,7 @@ export default function Home() {
                                             className="block truncate text-sm font-semibold text-foreground transition-colors hover:text-primary sm:text-base"
                                         >
                                             {contact.handle}
+                                            {contact.external && <span className="sr-only"> (opens in new tab)</span>}
                                         </Link>
                                     </div>
                                 </CardContent>
@@ -285,6 +321,6 @@ export default function Home() {
                     </p>
                 </div>
             </footer>
-        </div>
+        </main>
     )
 }
