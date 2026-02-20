@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+    reactStrictMode: true,
+    // Disable static exports for pages that have issues with React 19
+    experimental: {
+        // Improve build stability
+        webpackBuildWorker: true
+    }
+}
 
-export default nextConfig;
+export default nextConfig
