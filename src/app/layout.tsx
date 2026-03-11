@@ -1,6 +1,6 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
 import { Metadata } from "next"
-import Script from "next/script"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -12,14 +12,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
-            <head>
-                <Script
-                    defer
-                    src="https://analytics-xcfio.netlify.app/script.js"
-                    data-website-id="cdcd5bc6-0f04-421e-8d3e-f09a2644085f"
-                />
-            </head>
             <body className={`antialiased`}>{children}</body>
+            <SpeedInsights />
             <Analytics />
         </html>
     )
