@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -122,13 +124,27 @@ export default function Home() {
                                 data-driven marketing solutions.
                             </p>
                             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-                                <Button size="lg" className="gap-2" asChild>
-                                    <Link href="#contact">
-                                        Get in Touch <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                                    </Link>
+                                <Button
+                                    size="lg"
+                                    className="gap-2"
+                                    onClick={() =>
+                                        globalThis.document
+                                            .getElementById("contact")
+                                            ?.scrollIntoView({ behavior: "smooth" })
+                                    }
+                                >
+                                    Get in Touch <ArrowRight className="h-4 w-4" aria-hidden="true" />
                                 </Button>
-                                <Button size="lg" variant="outline" asChild>
-                                    <Link href="#services">View Services</Link>
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    onClick={() =>
+                                        globalThis.document
+                                            .getElementById("services")
+                                            ?.scrollIntoView({ behavior: "smooth" })
+                                    }
+                                >
+                                    View Services
                                 </Button>
                             </div>
                         </div>
@@ -251,10 +267,14 @@ export default function Home() {
                     <p className="mb-8 text-lg font-semibold text-primary sm:text-xl">
                         Let&apos;s Build Your Brand Digitally.
                     </p>
-                    <Button size="lg" className="gap-2" asChild>
-                        <Link href="#contact">
-                            Start Your Journey <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                        </Link>
+                    <Button
+                        size="lg"
+                        className="gap-2"
+                        onClick={() =>
+                            globalThis.document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                        }
+                    >
+                        Start Your Journey <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Button>
                 </div>
             </section>
@@ -283,7 +303,7 @@ export default function Home() {
                         {contactLinks.map((contact, index) => (
                             <Card
                                 key={index}
-                                className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 py-3"
+                                className="py-0 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
                             >
                                 <CardContent className="flex items-center gap-4 p-4 sm:p-6">
                                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
